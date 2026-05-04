@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data.products));
   }, []);
 
   const nextProducts = () => {
@@ -24,13 +24,13 @@ function App() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h2>Product Gallery</h2>
+      <h1>Product Gallery</h1>
 
       <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
         {products.slice(startIndex, startIndex + 4).map((item) => (
           <div key={item.id}>
             <img
-              src={item.image}
+              src={item.thumbnail}
               alt={item.title}
               style={{ width: "150px", height: "150px" }}
             />
@@ -41,8 +41,7 @@ function App() {
       <br />
 
       <button onClick={prevProducts}>Prev</button>
-      <br></br>
-      <button onClick={nextProducts} >
+      <button onClick={nextProducts} style={{ marginLeft: "10px" }}>
         Next
       </button>
     </div>
