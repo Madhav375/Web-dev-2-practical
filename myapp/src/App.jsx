@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Product Gallery</h1>
+      <h2>Product Gallery</h2>
 
       <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
         {products.slice(startIndex, startIndex + 4).map((item) => (
@@ -41,9 +41,8 @@ function App() {
       <br />
 
       <button onClick={prevProducts}>Prev</button>
-      <button onClick={nextProducts} style={{ marginLeft: "10px" }}>
-        Next
-      </button>
+      <br />
+      <button onClick={nextProducts}>Next</button>
     </div>
   );
 }
